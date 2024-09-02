@@ -8,12 +8,12 @@ git-url = "https://github.com/golangci/golangci-lint"
 [platform.linux]
 download-file = "golangci-lint-{version}-linux-{arch}.tar.gz"
 checksum-file = "golangci-lint-{version}-checksums.txt"
-bin-path = "golangci-lint-{version}-linux-{arch}\\golangci-lint"
+bin-path = "golangci-lint-{version}-linux-{arch}/golangci-lint"
 
 [platform.macos]
 download-file = "golangci-lint-{version}-darwin-{arch}.tar.gz"
 checksum-file = "golangci-lint-{version}-checksums.txt"
-bin-path = "golangci-lint-{version}-darwin-{arch}\\golangci-lint"
+bin-path = "golangci-lint-{version}-darwin-{arch}/golangci-lint"
 
 [platform.windows]
 download-file = "golangci-lint-{version}-windows-{arch}.zip"
