@@ -1,5 +1,6 @@
 biome = "latest"
+golangci-lint = "latest"
 
 [plugins]
 biome = "https://raw.githubusercontent.com/Phault/proto-toml-plugins/main/biome/plugin.toml"
-golangci-lint = 'source:golangci-lint/plugin.toml'
+golangci-lint = "file://golangci-lint/plugin.toml"
