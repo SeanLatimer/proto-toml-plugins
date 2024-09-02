@@ -1,0 +1,235 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"title": "Proto TOML Plugin",
+	"type": "object",
+	"properties": {
+		"name": {
+			"type": "string"
+		},
+		"type": {
+			"type": "string",
+			"enum": ["language", "package-manager", "cli"]
+		},
+		"metadata": {
+			"type": "object",
+			"properties": {
+				"self-upgrade-commands": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			},
+			"required": ["self-upgrade-commands"]
+		},
+		"platform": {
+			"type": "object",
+			"additionalProperties": {
+				"type": "object",
+				"properties": {
+					"archs": {
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					"archive-prefix": {
+						"type": "string"
+					},
+					"checksum-file": {
+						"type": "string"
+					},
+					"download-file": {
+						"type": "string"
+					},
+					"exes-dir": {
+						"type": "string"
+					},
+					"exe-path": {
+						"type": "string"
+					},
+					"bin-path": {
+						"type": "string"
+					}
+				},
+				"required": ["download-file"]
+			}
+		},
+		"detect": {
+			"type": "object",
+			"properties": {
+				"version-files": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				}
+			}
+		},
+		"install": {
+			"type": "object",
+			"properties": {
+				"arch": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				},
+				"libc": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				},
+				"checksum-public-key": {
+					"type": "string"
+				},
+				"checksum-url": {
+					"type": "string"
+				},
+				"checksum-url-canary": {
+					"type": "string"
+				},
+				"download-url": {
+					"type": "string"
+				},
+				"download-url-canary": {
+					"type": "string"
+				},
+				"primary": {
+					"type": "object",
+					"properties": {
+						"exe-path": {
+							"type": "string"
+						},
+						"exe-link-path": {
+							"type": "string"
+						},
+						"no-bin": {
+							"type": "boolean"
+						},
+						"no-shim": {
+							"type": "boolean"
+						},
+						"parent-exe-name": {
+							"type": "string"
+						},
+						"shim-before-args": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"shim-after-args": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"shim-env-vars": {
+							"type": "object",
+							"additionalProperties": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"no-bin": {
+					"type": "boolean"
+				},
+				"no-shim": {
+					"type": "boolean"
+				},
+				"secondary": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "object",
+						"properties": {
+							"exe-path": {
+								"type": "string"
+							},
+							"exe-link-path": {
+								"type": "string"
+							},
+							"no-bin": {
+								"type": "boolean"
+							},
+							"no-shim": {
+								"type": "boolean"
+							},
+							"parent-exe-name": {
+								"type": "string"
+							},
+							"shim-before-args": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"shim-after-args": {
+								"type": "array",
+								"items": {
+									"type": "string"
+								}
+							},
+							"shim-env-vars": {
+								"type": "object",
+								"additionalProperties": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				}
+			},
+			"required": ["download-url", "arch"]
+		},
+		"packages": {
+			"type": "object",
+			"properties": {
+				"globals-lookup-dirs": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"globals-prefix": {
+					"type": "string"
+				}
+			}
+		},
+		"resolve": {
+			"type": "object",
+			"properties": {
+				"aliases": {
+					"type": "object",
+					"additionalProperties": {
+						"type": "string"
+					}
+				},
+				"versions": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"version-pattern": {
+					"type": "string"
+				},
+				"manifest-url": {
+					"type": "string"
+				},
+				"manifest-version-key": {
+					"type": "string"
+				},
+				"git-url": {
+					"type": "string"
+				},
+				"git-tag-pattern": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	"required": ["name", "type", "platform", "install", "resolve"]
+}
