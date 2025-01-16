@@ -14,7 +14,7 @@ download-file = "roadrunner-{version}-darwin-{arch}.tar.gz"
 exe-path = "roadrunner-{version}-darwin-{arch}/rr"
 
 [platform.windows]
-download-file = "roadrunner-{version}-windows-{arch}.tar.gz"
+download-file = "roadrunner-{version}-windows-{arch}.zip"
 exe-path = "roadrunner-{version}-windows-{arch}/rr.exe"
 
 [install]
