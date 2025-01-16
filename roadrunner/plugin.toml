@@ -7,15 +7,15 @@ git-url = "https://github.com/roadrunner-server/roadrunner"
 
 [platform.linux]
 download-file = "roadrunner-{version}-linux-{arch}.tar.gz"
-bin-path = "roadrunner-{version}-linux-{arch}/rr"
+exe-path = "roadrunner-{version}-linux-{arch}/rr"
 
 [platform.macos]
 download-file = "roadrunner-{version}-darwin-{arch}.tar.gz"
-bin-path = "roadrunner-{version}-darwin-{arch}/rr"
+exe-path = "roadrunner-{version}-darwin-{arch}/rr"
 
 [platform.windows]
 download-file = "roadrunner-{version}-windows-{arch}.tar.gz"
-bin-path = "roadrunner-{version}-windows-{arch}/rr.exe"
+exe-path = "roadrunner-{version}-windows-{arch}/rr.exe"
 
 [install]
 download-url = "https://github.com/roadrunner-server/roadrunner/releases/download/v{version}/{download_file}"
